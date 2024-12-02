@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Jaro:opsz@6..72&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="head_bar">
+      <h1 class="head_bar__title">
+        <h1>
+          <span class="titleletters">B</span><span class="titleletters">O</span
+          ><span class="titleletters">O</span><span class="titleletters">K</span
+          ><span class="titleletters">S</span><span class="titleletters">H</span
+          ><span class="titleletters">E</span><span class="titleletters">L</span
+          ><span class="titleletters">F</span>
+        </h1>
+      </h1>
+    </header>
+    <main>
+      <section class="slide input_section">
+        <h2>Masukkan Buku Baru</h2>
+        <form id="inputBook">
+          <div class="input">
+            <label for="inputBookTitle">Judul</label>
+            <input id="inputBookTitle" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookAuthor">Penulis</label>
+            <input id="inputBookAuthor" type="text" required />
+          </div>
+          <div class="input">
+            <label for="inputBookYear">Tahun</label>
+            <input id="inputBookYear" type="number" required />
+          </div>
+          <div class="input_inline">
+            <label for="inputBookIsComplete">Selesai dibaca</label>
+            <input id="inputBookIsComplete" type="checkbox" />
+          </div>
+          <button
+            id="bookSubmit"
+            type="submit"
+            onclick="animatedLettersCall(flamingletters1, 100, 1500);"
+          >
+            Masukkan Buku ke rak <span>Belum selesai dibaca</span>
+          </button>
+        </form>
+      </section>
+
+      <section class="search_section">
+        <div class="navOptions">
+          <button class="optbuttons" onclick="changeOption(1)">
+            Add another book
+          </button>
+          <button class="optbuttons" onclick="changeOption(2)">
+            Unfinished
+          </button>
+          <button class="optbuttons" onclick="changeOption(3)">Finished</button>
+        </div>
+        <form id="searchBook">
+          <input id="searchBookTitle" type="text" placeholder="Search" />
+        </form>
+      </section>
+
+      <section class="slide book_shelf">
+        <h2>Belum selesai dibaca</h2>
+
+        <div id="incompleteBookshelfList" class="book_list"></div>
+      </section>
+
+      <section class="slide book_shelf">
+        <h2>Selesai dibaca</h2>
+
+        <div id="completeBookshelfList" class="book_list"></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
